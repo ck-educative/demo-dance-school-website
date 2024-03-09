@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface Class {
+export interface Class {
   day: string;
   time: string;
   subject: string;
@@ -8,7 +8,7 @@ interface Class {
   level: 'Beginner' | 'Intermediate' | 'Advanced';
 }
 
-interface TimetableProps {
+export interface TimetableProps {
   classes: Class[];
 }
 

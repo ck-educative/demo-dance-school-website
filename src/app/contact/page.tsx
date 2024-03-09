@@ -9,9 +9,8 @@ const Contact: React.FC = () => {
                 <Content text="Have questions or inquiries? Get in touch with us!"/>
                 <Content text="Visit our dance school or contact us via phone or email. We will love to hear from you!"/>
                 <Content text="Address:  Avismriti Dance School, Bangalore"/>
-                <Content text="Email: ">
-                    <EmailLink text="avismirit.danceschool@gmail.com"/>
-                </Content>
+                <Content text="Email: "/>
+                <EmailLink text="avismirit.danceschool@gmail.com"/>
             </section>
         </div>
     );

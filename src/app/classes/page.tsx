@@ -1,10 +1,10 @@
 import {Heading1, Content} from '@/components/Common';
-import Timetable from '@/components/Timetable';
+import  Timetable, { Class } from '@/components/Timetable';
 
 
 const Classes: React.FC = () => {
   // Define your class schedule
-  const classes = [
+  const classes:Class[] = [
     { day: 'Monday', time: '9:00 - 10:00', subject: 'Bharatanatyam', type: 'Online', level: 'Beginner' },
     { day: 'Wednesday', time: '9:00 - 10:00', subject: 'Bharatanatyam', type: 'In-person', level: 'Beginner' },
     { day: 'Friday', time: '9:00 - 10:00', subject: 'Bharatanatyam', type: 'Online', level: 'Beginner' },

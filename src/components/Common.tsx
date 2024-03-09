@@ -46,17 +46,14 @@ const Heading2: React.FC<HeadingProps> = ({ text }) => {
   };
 
 
-  const Content: React.FC<ContentProps> = ({ text , children}) => {
+  const Content: React.FC<ContentProps> = ({ text }) => {
     return (
-      <div>
       <p style={{ 
           color: 'rgba(146, 3, 172, 0.951)', 
           fontSize: '1em', 
           padding: '10px', 
           fontFamily: 'fantasy', // Add monospace font
       }}>{text}</p>
-      {children ? (<> {children} </>): <></>}
-    </div>
     );
   };
 

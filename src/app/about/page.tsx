@@ -1,13 +1,14 @@
 import React from 'react';
 import { Content, Heading1, Heading2, Heading3 } from '@/components/Common';
 import styles from './About.module.css';
+import Image from 'next/image';
 
 const About: React.FC = () => {
   return (
     <section className={styles.about}>
       <Heading1 text="About Us"/>
       <div className={styles.director}>
-        <img src="/nandana.jpeg" alt="Director Nandana Krishnakumar" />
+        <Image src="/nandana.jpeg" alt="Director Nandana Krishnakumar" width={500} height={500}/>
         <div>
           <Heading2 text="Nandana Krishnakumar"/>
           <Heading3 text="Director, Dance School"/>
