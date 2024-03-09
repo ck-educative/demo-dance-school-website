@@ -1,0 +1,16 @@
+/* About section styles */
+.about {
+    padding: 2rem;
+  }
+  
+  .director {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  
+  .director img {
+    width: 200px; /* Adjust image size as needed */
+    border-radius: 50%; /* Make the image round */
+    margin-right: 1.5rem;
+  }
