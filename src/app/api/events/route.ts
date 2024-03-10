@@ -23,7 +23,7 @@ export async function GET(request: Request) {
         events = rows as Event[];
         console.log(rows);
     } catch (error) {
-        // console.error('error', error);
+        //console.error('error', error);
         return NextResponse.json({ error });
     }
 
