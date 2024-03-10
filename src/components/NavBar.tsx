@@ -7,13 +7,17 @@ export default function NavBarC() {
   return (
     <div className="p-2">
     <Navbar>
-      <NavbarBrand>
-        <AcmeLogo />
-        <Link href="/" color="foreground" aria-current="true">
-             <Content text="AVISMIRTI"/> 
-        </Link>
-      </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      <NavbarItem>
+          <Link href="/">
+          <AcmeLogo />
+          </Link>
+        </NavbarItem>
+      <NavbarItem>
+          <Link href="/">
+          <Content text="AVISMIRTI"/>
+          </Link>
+        </NavbarItem>
         <NavbarItem>
           <Link href="/about">
           <Content text="About Us"/>
@@ -39,8 +43,6 @@ export default function NavBarC() {
           <Content text="Testimonials"/>
           </Link>
         </NavbarItem>
-      </NavbarContent>
-      <NavbarContent justify="end">
         <NavbarItem>
           <Button as={Link} color="primary" href="/register" variant="flat">
           <Content text="Register Interest"/>
