@@ -1,5 +1,6 @@
+'use client';
 import { Content, Heading1 } from '@/components/Common';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 interface Event {
   day: string;
@@ -38,11 +39,24 @@ const EventTimetable: React.FC<TimetableProps> = ({ events }) => {
 };
 
 const Events: React.FC = () => {
-  // Define your event schedule
-  const events = [
-    { day: 'Monday', time: '9:00 - 10:00', eventName: 'Event 1', venue: 'Online', level: 'Beginner' },
-    // More events...
-  ];
+
+  const [events, setEvents] = useState([]);
+  const getEvents = async () => {
+  const response = await fetch('/api/events')
+                        .then( res => 
+                          {
+                            return res.json()
+                          })
+                        .then( data => {
+                          console.log(',,',data)
+                          setEvents(data);
+                         })
+  .catch( err => console.log(err) )
+}
+
+  useEffect(() => {
+    getEvents();
+  }, [])
 
   return (
     <div className="p-10">

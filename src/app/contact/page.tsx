@@ -6,7 +6,7 @@ const Contact: React.FC = () => {
         <div className="p-10">
             <section>
                 <Heading1 text="Contact Us" /> 
-                <Content text="Have questions or inquiries? Get in touch with us!"/>
+                <Content text="Have questions or inquiries or feedback? Get in touch with us!"/>
                 <Content text="Visit our dance school or contact us via phone or email. We will love to hear from you!"/>
                 <Content text="Address:  Avismriti Dance School, Bangalore"/>
                 <Content text="Email: "/>

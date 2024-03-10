@@ -1,21 +1,26 @@
+"use client";
 import {Heading1, Content} from '@/components/Common';
 import  Timetable, { Class } from '@/components/Timetable';
-
+import { useEffect, useState } from 'react';
 
 const Classes: React.FC = () => {
-  // Define your class schedule
-  const classes:Class[] = [
-    { day: 'Monday', time: '9:00 - 10:00', subject: 'Bharatanatyam', type: 'Online', level: 'Beginner' },
-    { day: 'Wednesday', time: '9:00 - 10:00', subject: 'Bharatanatyam', type: 'In-person', level: 'Beginner' },
-    { day: 'Friday', time: '9:00 - 10:00', subject: 'Bharatanatyam', type: 'Online', level: 'Beginner' },
-    { day: 'Monday', time: '11:00 - 12:00', subject: 'Bharatanatyam', type: 'Online', level: 'Intermediate' },
-    { day: 'Wednesday', time: '11:00 - 12:00', subject: 'Bharatanatyam', type: 'In-person', level: 'Intermediate' },
-    { day: 'Friday', time: '11:00 - 12:00', subject: 'Bharatanatyam', type: 'Online', level: 'Intermediate' },
-    { day: 'Monday', time: '1:00 - 2:00', subject: 'Bharatanatyam', type: 'Online', level: 'Advanced' },
-    { day: 'Wednesday', time: '1:00 - 2:00', subject: 'Bharatanatyam', type: 'In-person', level: 'Advanced' },
-    { day: 'Friday', time: '1:00 - 2:00', subject: 'Bharatanatyam', type: 'Online', level: 'Advanced' },
-  ];
 
+  // TODO: try if this can be moved to use getStaticProps
+  const [classes, setClasses] = useState([]);
+  const getClasses = async () => {
+  const response = await fetch('/api/classes')
+                        .then( res => res.json())
+                        .then( data => {
+                            setClasses(data);
+                         })
+  .catch( err => console.log(err) )
+}
+
+  useEffect(() => {
+    getClasses();
+  }, [])
+
+// //   // Define your class schedule
   return (
     <div className="p-10">
       <section>
@@ -24,8 +29,8 @@ const Classes: React.FC = () => {
           <Content text="We offer Bharatanatyam classes for all ages and skill levels. Whether you are a beginner or an advanced dancer, we have a class for you!"/>
           <Content text="Our experienced instructors provide comprehensive training in Bharatanatyam technique, theory, and repertoire."/>
           <Content text="Check out our class schedule and join us in exploring the rich tradition and artistry of Bharatanatyam!"/>
-          {/* TODO:// fix red for line below */}
-          <Timetable classes={classes} /> {/* Use the Timetable component */}
+          <Timetable classes={classes}/>
+
         </section>
       </section>
     </div>

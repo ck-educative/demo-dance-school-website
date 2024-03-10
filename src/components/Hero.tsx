@@ -3,6 +3,7 @@ import styles from '../styles/Hero.module.css'; // Import CSS module
 
 const Hero: React.FC = () => {
   return (
+    <div>
     <section className={styles.hero}>
       <div className={styles.overlay}>
         <div className={styles.content}>
@@ -11,6 +12,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
     </section>
+    </div>
   );
 };
 
